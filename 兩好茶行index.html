@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兩好茶行 | 台灣嚴選高山茶・全台各行各業、福委會年節大宗採購方案</title>
+    <style>
+        :root {
+            --primary-color: #1c3c2e; 
+            --accent-color: #c9a054;  
+            --bg-light: #f9f8f6;      
+            --text-dark: #2c2c2c;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(28, 60, 46, 0.85), rgba(28, 60, 46, 0.95));
+            color: var(--text-light);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            letter-spacing: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0 auto;
+        }
+
+        /* 品牌故事與負責人照片排版 */
+        .story-container {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+
+        .father-photo-box {
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .father-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .father-name {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .story-text {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 768px) {
+            .story-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .father-photo {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        /* 產品三欄式排版 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .product-grid { grid-template-columns: 1fr; }
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #eef0ed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background-color: #e2ede8;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 50px 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+
+        .info-item {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .highlight-box {
+            background-color: rgba(201, 160, 84, 0.15);
+            border: 1px dashed var(--accent-color);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            color: #a0aec0;
+            background-color: #11251c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部形象看板：全面開放全台接洽 -->
+    <header class="hero">
+        <h1>兩好茶行</h1>
+        <p>秉持兩大堅持：選好茶、焙好茶</p>
+        <p style="font-size: 1.2rem; color: var(--accent-color); font-weight: bold; letter-spacing: 2px;">
+            📢 歡迎全台各行各業、公司同仁、職工福委會大宗接洽！
+        </p>
+    </header>
+
+    <main class="container">
+        
+        <!-- 品牌傳承（帶有父親職人形象照） -->
+        <section>
+            <h2 class="section-title">品牌傳承</h2>
+            <div class="story-container">
+                <div class="father-photo-box">
+                    <img src="father.png" alt="兩好茶行負責人 陳良豪" class="father-photo">
+                    <div class="father-name">負責人：陳良豪 先生</div>
+                </div>
+                <div class="story-text">
+                    <p>兩好茶行由負責人<strong>陳良豪</strong>先生創立，深耕台灣在地多年。我們深知全台各行各業、公司企業老闆對於「一口純粹好茶」的渴望與重視。</p>
+                    <p style="margin-top: 15px;">每一片茶葉，皆由陳老闆親自深入台灣高山優質茶區鑑定，經由傳統焙火工藝細心烘焙，口感厚實、喉韻回甘、耐沖泡且不傷胃。我們不求花俏虛榮的包裝，只將最踏實、最實在的台灣大山滋味，送到全台每一位愛茶人的杯中。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 三大主力茶品方案 -->
+        <section>
+            <h2 class="section-title">嚴選台灣高山茶品方案</h2>
+            <div class="product-grid">
+                
+                <!-- 品項一 -->
+                <div class="product-card">
+                    <div class="product-info">
+                        <span class="product-tag">小資族首選 / 員工年禮</span>
+                        <h3>【經典】阿里山茶</h3>
+                        <div class="product-price">NT$ 1,200 <span style="font-size:0.9rem; font-weight:normal;">/ 斤</span></div>
+                        <p class="product-desc">嚴選阿里山高海拔茶區，茶湯翠綠清澈，帶有淡淡的清雅花香。入口生津、甘醇順口，非常適合各大小企業作為全體同仁年節、尾牙抽獎之禮品，經濟實惠又體面。</p>
+                    </div>
+                </div>
+
+                <!-- 品項二 -->
+                <div class="product-card">
+                    <div class="product-info">
+                        <span class="product-tag">中小資族最愛 / 主管送禮</span>
+                        <h3>【特選】梨山茶</h3>
+                        <div class="product-price">NT$ 2,200 <span style="font-size:0.9rem; font-weight:normal;">/ 斤</span></div>
+                        <p class="product-desc">產自梨山高冷茶區，因常年雲霧繚繞，茶葉肉厚質純。富有獨特的高冷梨果香，喉韻飽滿回甘，最受中大型企業長官、中階主管與公司福委會青睞。</p>
+                    </div>
+                </div>
+
+                <!-- 品項三 -->
+                <div class="product-card">
+                    <div class="product-info">
+                        <span class="product-tag">至高尊榮 / 頂級VIP餽贈</span>
+                        <h3>【尊榮】大禹嶺茶</h3>
+                        <div class="product-price">NT$ 5,000 <span style="font-size:0.9rem; font-weight:normal;">/ 斤</span></div>
+                        <p class="product-desc">台灣頂級高山茶之王。產自極高海拔大禹嶺茶區，產量極其稀少。茶湯自帶冷冽高冷山韻，入口甘甜如泉，是全台商業社團、年節餽贈核心VIP客戶、大股東與董事長之至高珍品。</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 聯絡我們與大宗服務：完全拿掉農會發票字眼 -->
+        <section class="contact-section">
+            <h2>全台大宗採購與樣品索取對接</h2>
+            <div class="info-item"><strong>茶行負責人：</strong>陳良豪 先生</div>
+            <div class="info-item"><strong>服務專線：</strong>0915-291777</div>
+            <div class="info-item" style="font-size: 0.95rem; opacity: 0.9; margin-top: 15px;">
+                📍 <strong>服務地區：服務全台、沒有限制！</strong> 歡迎全台灣各行各業、公司福委會、傳統工廠、大車車隊大宗接洽洽談。
+            </div>
+            
+            <div class="highlight-box">
+                💡 <strong>【企業採購貼心服務】</strong><br>
+                本茶行各款精選茶品，大宗採購皆可完全配合寄送茶葉樣品供貴公司或福委會進行評估盲測。<br>
+                出貨皆可完整開立合法的免用統一發票正式收據（蓋茶行章與負責人陳良豪私章），方便貴公司進行財務核銷與年底報帳。
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 兩好茶行. All Rights Reserved. 台灣在地深耕傳承・歡迎全台各行各業接洽</p>
+    </footer>
+
+</body>
+</html>
